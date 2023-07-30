@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract DegenToken {
     string public name = "Degen Gaming Token";
-    string public symbol = "DG";
+    string public symbol = "DGN";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 
@@ -26,9 +26,9 @@ contract DegenToken {
         _;
     }
 
-    constructor(uint256 initialSupply) {
+    constructor() {
         owner = msg.sender;
-        totalSupply = initialSupply * (10**uint256(decimals));
+        totalSupply = 1000000 * (10**uint256(decimals)); // 1 million tokens
         balanceOf[msg.sender] = totalSupply;
 
         // Initialize the shop with item prices and stocks
